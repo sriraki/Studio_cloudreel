@@ -55,8 +55,8 @@ export function ScheduleArt() {
       {/* Session card */}
       <Card x="150" y="96" width="150" height="54" />
       <rect x="160" y="107" width="4" height="32" rx="2" className="fill-brand-500" />
-      <text x="172" y="120" fontSize="11" fontWeight="600" className="fill-gray-900">Team sync</text>
-      <text x="172" y="136" fontSize="9" className="fill-gray-500">Tue · 10:00 AM</text>
+      <text x="172" y="120" fontSize="11" fontWeight="600" className="fill-gray-900">Evening News</text>
+      <text x="172" y="136" fontSize="9" className="fill-gray-500">Tue · 9:00 PM</text>
       <circle cx="266" cy="123" r="8" strokeWidth="2" className="fill-brand-300 stroke-white" />
       <circle cx="280" cy="123" r="8" strokeWidth="2" className="fill-blue-300 stroke-white" />
 
