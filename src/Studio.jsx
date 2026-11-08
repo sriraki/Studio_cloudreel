@@ -32,10 +32,10 @@ const tabs = [
 
 function EmptyState({ art: Art, title, body, cta }) {
   return (
-    <div className="mx-auto flex max-w-md flex-col items-center pt-8 text-center lg:pt-14">
+    <div className="mx-auto flex max-w-[460px] flex-col items-center pt-6 text-center lg:pt-10">
       <Art />
       <h2 className="mt-4 text-lg font-semibold text-gray-900">{title}</h2>
-      <p className="mt-2 text-sm leading-relaxed text-gray-500">{body}</p>
+      <p className="mt-2 max-w-md text-sm leading-relaxed text-gray-500">{body}</p>
       <button className="mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-brand-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
         <CalendarPlus className="size-4" /> {cta}
       </button>

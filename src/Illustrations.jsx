@@ -3,7 +3,7 @@
 
 function Frame({ label, children }) {
   return (
-    <svg viewBox="0 0 360 220" role="img" aria-label={label} className="w-full max-w-[360px] font-sans">
+    <svg viewBox="0 0 360 220" role="img" aria-label={label} className="w-full max-w-[460px] font-sans">
       <defs>
         <filter id="ill-shadow" x="-20%" y="-20%" width="140%" height="160%">
           <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#1f0d38" floodOpacity="0.08" />
