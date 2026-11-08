@@ -1,20 +1,12 @@
 import { useState } from 'react'
-import { CalendarPlus, Plus, Presentation, Radio } from 'lucide-react'
-
-// Icon colour per session type; the buttons stay brand purple everywhere.
-// Full class strings so Tailwind can find them.
-const tones = {
-  purple: { soft: 'bg-brand-50', mid: 'bg-brand-100', icon: 'text-brand-600' },
-  blue: { soft: 'bg-blue-50', mid: 'bg-blue-100', icon: 'text-blue-600' },
-  red: { soft: 'bg-red-50', mid: 'bg-red-100', icon: 'text-red-600' },
-}
+import { CalendarPlus, Plus } from 'lucide-react'
+import { LiveArt, ScheduleArt, WebinarArt } from './Illustrations.jsx'
 
 const tabs = [
   {
     id: 'schedule',
     label: 'Schedule',
-    tone: tones.purple,
-    icon: CalendarPlus,
+    art: ScheduleArt,
     title: 'Schedule your first session',
     body: 'Pick a date and time on the calendar. When it’s time, start your session right here in the Studio.',
     cta: 'Schedule a session',
@@ -22,8 +14,7 @@ const tabs = [
   {
     id: 'webinar',
     label: 'Webinar',
-    tone: tones.blue,
-    icon: Presentation,
+    art: WebinarArt,
     title: 'Host your first webinar',
     body: 'Invite attendees, share your screen and take questions live. Your upcoming webinars will show up here.',
     cta: 'Schedule a webinar',
@@ -32,27 +23,18 @@ const tabs = [
     id: 'live',
     label: 'Live',
     live: true,
-    tone: tones.red,
-    icon: Radio,
+    art: LiveArt,
     title: 'Go live for the first time',
     body: 'Stream to your audience on multiple platforms at once. Anything that’s live right now will appear here.',
     cta: 'Schedule a live stream',
   },
 ]
 
-function EmptyState({ icon: Icon, tone, title, body, cta }) {
+function EmptyState({ art: Art, title, body, cta }) {
   return (
-    <div className="mx-auto flex max-w-md flex-col items-center pt-16 text-center lg:pt-24">
-      <div className="relative grid size-20 place-items-center">
-        <span className={`absolute inset-0 rounded-full ${tone.mid} motion-safe:animate-ripple`} />
-        <span className={`absolute inset-0 rounded-full ${tone.mid} motion-safe:animate-ripple`} style={{ animationDelay: '1.5s' }} />
-        <div className={`relative grid size-20 place-items-center rounded-full ${tone.soft}`}>
-          <div className={`grid size-14 place-items-center rounded-full ${tone.mid}`}>
-            <Icon className={`size-7 ${tone.icon}`} strokeWidth={1.75} />
-          </div>
-        </div>
-      </div>
-      <h2 className="mt-6 text-lg font-semibold text-gray-900">{title}</h2>
+    <div className="mx-auto flex max-w-md flex-col items-center pt-8 text-center lg:pt-14">
+      <Art />
+      <h2 className="mt-4 text-lg font-semibold text-gray-900">{title}</h2>
       <p className="mt-2 text-sm leading-relaxed text-gray-500">{body}</p>
       <button className="mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-brand-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
         <CalendarPlus className="size-4" /> {cta}
